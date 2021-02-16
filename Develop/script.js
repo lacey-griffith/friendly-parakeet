@@ -81,7 +81,6 @@ function chooseCriteria() {
           numericChar = false;
         };
       }
-function generatePassword() {
 
 
 
