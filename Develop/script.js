@@ -1,9 +1,18 @@
 // Assignment code here
+// declaring global variables
+var characterLength;
 
-var uppercaseLettersArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var lowercaseLettersArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var numbersArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var specialCharactersArray = ['!', '#', '$', '%', '&', '(', ')', '*', '+', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@'];
+var lowerCase;
+var upperCase;
+var numericChar;
+var specialChar;
+
+//declaring arrays of character options
+var upperCaseArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var lowercCaseArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var numericArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var specialCharArray = ['!', '#', '$', '%', '&', '(', ')', '*', '+', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@'];
+var newPassword = [];
 
 // determine amount of characters desired for password
 function chooseCharacters() {
@@ -22,69 +31,62 @@ var characterLength =
         chooseCharacters();
       }
     }
-
-
-//choose if wants lowercase letters
-function chooseCriteria() {  
+//choose to include lowercase characters
+function chooseCriteria() {
   var lowerCase =
-      confirm("Would you like to include lowercase characters?");
+    confirm("Would you like to include lowercase characters?");
 
-        if (lowerCase) {
-          alert("Okay, include lowercase characters.");
-          console.log("Yes, include lowercase");
+  if (lowerCase) {
+    alert("Okay, include lowercase characters.");
+    console.log("Yes, include lowercase");
 
-        } 
-        else {
-          (!lowerCase)
-          alert("Okay, don't include lowercase characters.");
-          };
+  } else {
+    (!lowerCase)
+    alert("Okay, don't include lowercase characters.");
+  };
 
-  //choose if wants uppercase letters
-    var upperCase =
-      confirm("Would you like to include uppercase characters?")
+  //choose to include uppercase characters
+  var upperCase =
+    confirm("Would you like to include uppercase characters?")
 
-        if (upperCase) {
-          alert("Okay, include uppercase characters.");
-          console.log("Yes, include uppercase");
-        } 
-        else {
-          (!upperCase)
-          alert("Okay, don't include uppercase characters.");
-          upperCase = false;
-        };
+  if (upperCase) {
+    alert("Okay, include uppercase characters.");
+    console.log("Yes, include uppercase");
+  } else {
+    (!upperCase)
+    alert("Okay, don't include uppercase characters.");
+    upperCase = false;
+  };
 
-    // choose if wants special characters
-    var specialChar =
-      confirm("Would you like to include special characters?")
+  // choose to include special characters
+  var specialChar =
+    confirm("Would you like to include special characters?")
 
-        if (specialChar) {
-          alert("Okay, include special characters.");
-          console.log("Yes, include special characters");
-        } 
-        else {
-          (!specialChar)
-          alert("Okay, don't include special characters.");
-          specialChar = false;
-        };
+  if (specialChar) {
+    alert("Okay, include special characters.");
+    console.log("Yes, include special characters");
+  } else {
+    (!specialChar)
+    alert("Okay, don't include special characters.");
+    specialChar = false;
+  };
 
-    //choose if wants numbers
-    var numericChar =
-      confirm("Would you like to include numbers?")
+  //choose to include numbers
+  var numericChar =
+    confirm("Would you like to include numbers?")
 
-        if (numericChar) {
-          alert("Okay, include numbers.");
-          console.log("Yes, include numbers");
-        } 
-        else {
-          (!numericChar)
-          alert("Okay, don't include numbers.");
-          numericChar = false;
-        };
-      }
+  if (numericChar) {
+    alert("Okay, include numbers.");
+    console.log("Yes, include numbers");
+  } else {
+    (!numericChar)
+    alert("Okay, don't include numbers.");
+    numericChar = false;
+  };
+}
 
 
-
-
+//Provided code//
   // Get references to the #generate element
   var generateBtn = document.querySelector("#generate");
 
@@ -100,4 +102,6 @@ function chooseCriteria() {
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
 
-  chooseCharacters()
+
+
+  chooseCharacters();
