@@ -1,4 +1,5 @@
 // Assignment code here
+
 // declaring global variables
 var characterLength;
 
@@ -7,16 +8,21 @@ var upperCase;
 var numericChar;
 var specialChar;
 
+var newPassword;
+
 //declaring arrays of character options
 var upperCaseArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var lowercCaseArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var lowerCaseArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var numericArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialCharArray = ['!', '#', '$', '%', '&', '(', ')', '*', '+', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@'];
-var newPassword = [];
+
+//declaring empty arrays to add value to
+var newPasswordCharacters = [];
+var newPasswordText = "";
 
 // determine amount of characters desired for password
 function chooseCharacters() {
-var characterLength =
+characterLength =
     prompt("How many characters would you like?");
     characterLength = Number(characterLength);
     console.log(characterLength);
@@ -33,7 +39,7 @@ var characterLength =
     }
 //choose to include lowercase characters
 function chooseCriteria() {
-  var lowerCase =
+lowerCase =
     confirm("Would you like to include lowercase characters?");
 
   if (lowerCase) {
@@ -46,7 +52,7 @@ function chooseCriteria() {
   };
 
   //choose to include uppercase characters
-  var upperCase =
+  upperCase =
     confirm("Would you like to include uppercase characters?")
 
   if (upperCase) {
@@ -59,7 +65,7 @@ function chooseCriteria() {
   };
 
   // choose to include special characters
-  var specialChar =
+  specialChar =
     confirm("Would you like to include special characters?")
 
   if (specialChar) {
@@ -72,7 +78,7 @@ function chooseCriteria() {
   };
 
   //choose to include numbers
-  var numericChar =
+  numericChar =
     confirm("Would you like to include numbers?")
 
   if (numericChar) {
@@ -83,7 +89,40 @@ function chooseCriteria() {
     alert("Okay, don't include numbers.");
     numericChar = false;
   };
-}
+};
+
+// determine the true criteria and put their array values into the new empty array to choose from
+function writePassword() {
+  console.log(characterLength);
+  console.log(lowerCase);
+  console.log(upperCase);
+  console.log(specialChar);
+  console.log(numericChar);
+
+    if (lowerCase === true) {
+      newPasswordCharacters.push(lowerCaseArray);
+    }
+
+    if (upperCase === true) {
+      newPasswordCharacters.push(upperCaseArray);
+    }
+
+    if (specialChar === true) {
+      newPasswordCharacters.push(specialCharArray);
+    }
+
+    if (numericChar === true) {
+      newPasswordCharacters.push(numericArray);
+    }
+    console.log(newPasswordCharacters.join(','));
+
+    for (i = 0; i < characterLength; i ++) {
+    newPasswordCharacters = (Math.floor(Math.random() * characterLength) + 1);
+    newPasswordCharacters = newPassword;
+    console.log(newPassword);
+    }
+};
+
 
 
 //Provided code//
@@ -91,17 +130,18 @@ function chooseCriteria() {
   var generateBtn = document.querySelector("#generate");
 
   // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+  // function writePassword() {
+  //   var password = generatePassword();
+  //   var passwordText = document.querySelector("#password");
 
-    passwordText.value = password;
+   // passwordText.value = password;
 
-  }
+  // }
 
-  // Add event listener to generate button
+  // // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
 
 
 
   chooseCharacters();
+  writePassword();
