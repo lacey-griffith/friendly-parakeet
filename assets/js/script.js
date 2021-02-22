@@ -20,6 +20,13 @@ var specialCharArray = ['!@#$%^&*()_+'];
 //declaring empty arrays to add value to
 var newPasswordCharacters = [];
 
+//to generate a new password, with emptied arrays for new criteria
+function reset() {
+  charString = "";
+  newPassword = "";
+  newPasswordCharacters = [];
+}
+
 // determine amount of characters desired for password
 function chooseCharacters() {
 characterLength =
@@ -129,7 +136,7 @@ function generatePassword() {
 
   //Write password to the #password input
   function writePassword() {
-    newPassword = "";
+    reset();
     chooseCharacters();
     generatePassword();
     var newPasswordText = document.querySelector("#password");
