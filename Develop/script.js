@@ -130,7 +130,7 @@ function generatePassword() {
 
     // loop to choose characters from joined potential character array with desired password length
     for (var i = 0; i < characterLength; i ++) {
-    newPassword = newPassword.concat(charString[Math.floor(Math.random() * charString.length + 1)]);  
+    newPassword = newPassword.concat(charString[Math.floor(Math.random() * charString.length)]);  
   }
   console.log(newPassword);
 };
