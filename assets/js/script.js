@@ -26,7 +26,7 @@ characterLength =
     prompt("How many characters would you like?");
     characterLength = Number(characterLength);
     console.log(characterLength);
-      if (characterLength > Number(8) && characterLength < Number(128)) {
+      if (characterLength >= Number(8) && characterLength <= Number(128)) {
         alert(" Your password will be " +characterLength+ " characters.");
         chooseCriteria();
       }
