@@ -103,25 +103,25 @@ function generatePassword() {
     if (lowerCase === true) {
       //add lowercase characters to potential character array
       newPasswordCharacters.push(lowerCaseArray);
-      console.log(newPasswordCharacters);
+      //console.log(newPasswordCharacters);
   }
 
     if (upperCase === true) {
       //add uppercase characters to potential character array
       newPasswordCharacters.push(upperCaseArray);
-      console.log(newPasswordCharacters);
+      //console.log(newPasswordCharacters);
   }
 
     if (specialChar === true) {
       //add special characters to potential character array
       newPasswordCharacters.push(specialCharArray);
-      console.log(newPasswordCharacters);
+      //console.log(newPasswordCharacters);
   }
 
     if (numericChar === true) {
       //add numbers to potential character array
       newPasswordCharacters.push(numericArray);
-      console.log(newPasswordCharacters);
+      //console.log(newPasswordCharacters);
   }
   
     //new array to join all characters of potential character array
