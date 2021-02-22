@@ -1,8 +1,6 @@
 # Password Generator (friendly-parakeet)
 
-This application was created to generate a random and secure password for the user. Allowing the user to include or exclude certain types of characters, the password is personalized to the user. 
-
-Lorem epson
+This application was created to generate a random and secure password for the user. Allowing the user to include or exclude certain types of characters, the password is personalized to the user.
 
 ![Site Image](assets/images/passwordGeneratorScreenshot.png)
 
