@@ -94,34 +94,25 @@ lowerCase =
 
 // determine the true criteria and put their array values into the new empty array to choose from
 function generatePassword() {
-  // console.log(characterLength);
-  // console.log(lowerCase);
-  // console.log(upperCase);
-  // console.log(specialChar);
-  // console.log(numericChar);
 
     if (lowerCase === true) {
       //add lowercase characters to potential character array
       newPasswordCharacters.push(lowerCaseArray);
-      //console.log(newPasswordCharacters);
   }
 
     if (upperCase === true) {
       //add uppercase characters to potential character array
       newPasswordCharacters.push(upperCaseArray);
-      //console.log(newPasswordCharacters);
   }
 
     if (specialChar === true) {
       //add special characters to potential character array
       newPasswordCharacters.push(specialCharArray);
-      //console.log(newPasswordCharacters);
   }
 
     if (numericChar === true) {
       //add numbers to potential character array
       newPasswordCharacters.push(numericArray);
-      //console.log(newPasswordCharacters);
   }
   
     //new array to join all characters of potential character array
