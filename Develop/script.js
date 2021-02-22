@@ -19,8 +19,6 @@ var specialCharArray = ['!@#$%^&*()_+'];
 
 //declaring empty arrays to add value to
 var newPasswordCharacters = [];
-// make into a string
-var newPasswordText = "";
 
 
 
@@ -132,7 +130,7 @@ function generatePassword() {
 
     // loop to choose characters from joined potential character array with desired password length
     for (var i = 0; i < characterLength; i ++) {
-    newPassword = newPassword.concat(charString[Math.floor(Math.random() * charString.length + 1.5)]);  
+    newPassword = newPassword.concat(charString[Math.floor(Math.random() * charString.length + 1)]);  
   }
   console.log(newPassword);
 };
