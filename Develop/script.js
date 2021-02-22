@@ -8,17 +8,21 @@ var upperCase;
 var numericChar;
 var specialChar;
 
-var newPassword;
+var charString = "";
+var newPassword = "";
 
 //declaring arrays of character options
-var upperCaseArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var lowerCaseArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var numericArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var specialCharArray = ['!', '#', '$', '%', '&', '(', ')', '*', '+', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@'];
+var upperCaseArray = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+var lowerCaseArray = ['abcdefghijklmnopqrstuvwxyz'];
+var numericArray = ['0123456789'];
+var specialCharArray = ['!@#$%^&*()_+'];
 
 //declaring empty arrays to add value to
 var newPasswordCharacters = [];
+// make into a string
 var newPasswordText = "";
+
+
 
 // determine amount of characters desired for password
 function chooseCharacters() {
@@ -26,7 +30,6 @@ characterLength =
     prompt("How many characters would you like?");
     characterLength = Number(characterLength);
     console.log(characterLength);
-
       if (characterLength > Number(8) && characterLength < Number(128)) {
         alert(" Your password will be " +characterLength+ " characters.");
         chooseCriteria();
@@ -92,56 +95,64 @@ lowerCase =
 };
 
 // determine the true criteria and put their array values into the new empty array to choose from
-function writePassword() {
-  console.log(characterLength);
-  console.log(lowerCase);
-  console.log(upperCase);
-  console.log(specialChar);
-  console.log(numericChar);
+function generatePassword() {
+  // console.log(characterLength);
+  // console.log(lowerCase);
+  // console.log(upperCase);
+  // console.log(specialChar);
+  // console.log(numericChar);
 
     if (lowerCase === true) {
+      //add lowercase characters to potential character array
       newPasswordCharacters.push(lowerCaseArray);
-    }
+      console.log(newPasswordCharacters);
+  }
 
     if (upperCase === true) {
+      //add uppercase characters to potential character array
       newPasswordCharacters.push(upperCaseArray);
-    }
+      console.log(newPasswordCharacters);
+  }
 
     if (specialChar === true) {
+      //add special characters to potential character array
       newPasswordCharacters.push(specialCharArray);
-    }
+      console.log(newPasswordCharacters);
+  }
 
     if (numericChar === true) {
+      //add numbers to potential character array
       newPasswordCharacters.push(numericArray);
-    }
-    console.log(newPasswordCharacters.join(','));
+      console.log(newPasswordCharacters);
+  }
+  
+    //new array to join all characters of potential character array
+    charString = newPasswordCharacters.join("");
+    console.log(charString);
 
-    for (i = 0; i < characterLength; i ++) {
-    newPasswordCharacters = (Math.floor(Math.random() * characterLength) + 1);
-    newPasswordCharacters = newPassword;
-    console.log(newPassword);
-    }
+    // loop to choose characters from joined potential character array with desired password length
+    for (var i = 0; i < characterLength; i ++) {
+    newPassword = newPassword.concat(charString[Math.floor(Math.random() * charString.length + 1.5)]);  
+  }
+  console.log(newPassword);
 };
-
-
 
 //Provided code//
   // Get references to the #generate element
   var generateBtn = document.querySelector("#generate");
 
-  // Write password to the #password input
-  // function writePassword() {
-  //   var password = generatePassword();
-  //   var passwordText = document.querySelector("#password");
+  //Write password to the #password input
+  function writePassword() {
+    var newPasswordText = document.querySelector("#password");
+    newPasswordText.value = newPassword;
 
-   // passwordText.value = password;
+  }
 
-  // }
-
-  // // Add event listener to generate button
+  // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
 
 
 
   chooseCharacters();
+  generatePassword();
   writePassword();
