@@ -20,8 +20,6 @@ var specialCharArray = ['!@#$%^&*()_+'];
 //declaring empty arrays to add value to
 var newPasswordCharacters = [];
 
-
-
 // determine amount of characters desired for password
 function chooseCharacters() {
 characterLength =
@@ -90,11 +88,10 @@ lowerCase =
     alert("Okay, don't include numbers.");
     numericChar = false;
   };
-};
+}
 
 // determine the true criteria and put their array values into the new empty array to choose from
 function generatePassword() {
-
     if (lowerCase === true) {
       //add lowercase characters to potential character array
       newPasswordCharacters.push(lowerCaseArray);
@@ -124,7 +121,7 @@ function generatePassword() {
     newPassword = newPassword.concat(charString[Math.floor(Math.random() * charString.length)]);  
   }
   console.log(newPassword);
-};
+}
 
 //Provided code//
   // Get references to the #generate element
@@ -132,16 +129,18 @@ function generatePassword() {
 
   //Write password to the #password input
   function writePassword() {
+    newPassword = "";
+    chooseCharacters();
+    generatePassword();
     var newPasswordText = document.querySelector("#password");
     newPasswordText.value = newPassword;
-
   }
 
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
 
 
-
-  chooseCharacters();
-  generatePassword();
-  writePassword();
+  
+  //chooseCharacters();
+  //generatePassword();
+  //writePassword ();
