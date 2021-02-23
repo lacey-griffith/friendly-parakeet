@@ -94,8 +94,12 @@ lowerCase =
     (!numericChar)
     alert("Okay, don't include numbers.");
     numericChar = false;
-  };
-}
+  }
+  if (lowerCase === false && upperCase === false && specialChar === false && numericChar === false) {
+    alert("You must choose at least one option to build your password!");
+    chooseCriteria();
+  }
+};
 
 // determine the true criteria and put their array values into the new empty array to choose from
 function generatePassword() {
